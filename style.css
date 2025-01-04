@@ -1,0 +1,93 @@
+/* Fundo com a imagem do Banguela e Fúria da Luz, translúcido */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+      135deg,
+      rgba(44, 62, 80, 0.6),
+      rgba(52, 73, 94, 0.6)
+    ),
+    /* Fundo escuro com efeito translúcido */ url("images/Furia.png")
+      center/cover no-repeat; /* Imagem de fundo */
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+/* Container do texto romântico */
+.container {
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+}
+
+/* Container dos corações */
+#hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Corações azul pastel */
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(173, 216, 230, 0.9); /* Azul pastel */
+  transform: rotate(45deg);
+  animation: floatUp 4s ease-in-out forwards; /* Duração ajustada */
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.7);
+}
+
+/* Formato dos corações com pseudo-elementos */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(173, 216, 230, 0.9); /* Azul pastel */
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 25px;
+}
+
+/* Animação dos corações flutuando */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) scale(1);
+    opacity: 0;
+  }
+}
